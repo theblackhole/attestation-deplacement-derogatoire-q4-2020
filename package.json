@@ -1,6 +1,6 @@
 {
   "name": "attestation-derogatoire-de-deplacement",
-  "version": "1.0.5",
+  "version": "1.0.6-rc1",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "build:dev": "cross-env PUBLIC_URL='/' npm run build:simple",
     "preserve": "npm run build",
     "serve": "serve dist",
-    "serve:dist": "serve dist"
+    "serve:dist": "serve dist",
+    "gcloud:build": "npm run clean:dist && cross-env-shell NODE_PATH=. PUBLIC_URL=\"${PUBLIC_URL:-https://autocovid19.oa.r.appspot.com/}\" VERSION=\"${VERSION:-testversion}\" npm run build:simple"
   },
   "repository": {
     "type": "git",

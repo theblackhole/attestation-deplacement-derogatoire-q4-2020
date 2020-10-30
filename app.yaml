@@ -1,0 +1,15 @@
+runtime: nodejs12
+
+env_variables:
+  PUBLIC_URL: "https://autocovid19.oa.r.appspot.com/"
+  VERSION: "1.0.6-rc1 (tar-gezed x theblackhole)"
+
+handlers:
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+
+  - url: /(.*)
+    static_files: dist/\1
+    upload: dist/(.*)
+
